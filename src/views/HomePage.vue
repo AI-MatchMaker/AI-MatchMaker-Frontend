@@ -43,7 +43,7 @@
                 <div v-for="item in items" :key="item.title"
                     class="bg-white p-6 md:px-10 md:py-14 rounded-2xl shadow-xl transform duration-500 hover:scale-105 flex flex-col space-y-3 text-center border-8 border-gray-400 hover:border-theme-blue-2 cursor-pointer transition-all">
                     <div class="flex justify-center items-center h-32">
-                        <img :src="`/src/assets/icon/${item.icon}.png`" class="h-full w-auto">
+                        <img :src="item.icon" class="h-full w-auto">
                     </div>
                     <h2 class="text-xl md:text-2xl font-lora text-gray-900">{{ item.title }}</h2>
                     <p class="text-md md:text-lg text-gray-600">{{ item.content }}</p>
@@ -54,10 +54,15 @@
 </template>
 
 <script setup>
+import telescope from '../assets/icon/telescope.png'
+import target from '../assets/icon/target.png'
+import sprout from '../assets/icon/sprout.png'
+
+
 const items = [
-    { title: 'Vision', content: 'Our vision is to empower every user to harness the full potential of AI technologies seamlessly.', icon: 'telescope' },
-    { title: 'Mission', content: 'To simplify and personalize the journey towards effective AI adoption, ensuring every solution aligns with our clients\' unique objectives.', icon: 'target' },
-    { title: 'Values', content: 'We champion innovation, provide clarity in AI technology, and build trust with reliable, tailored solutions.', icon: 'sprout' }
+    { title: 'Vision', content: 'Our vision is to empower every user to harness the full potential of AI technologies seamlessly.', icon: telescope },
+    { title: 'Mission', content: 'To simplify and personalize the journey towards effective AI adoption, ensuring every solution aligns with our clients\' unique objectives.', icon: target },
+    { title: 'Values', content: 'We champion innovation, provide clarity in AI technology, and build trust with reliable, tailored solutions.', icon: sprout }
 ];
 
 
